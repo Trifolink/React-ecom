@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .nav-link {
+    @apply px-3 py-2 text-gray-700 hover:text-gray-900 rounded-lg transition-colors;
+  }
+
+  .nav-link.active {
+    @apply bg-blue-500 text-white hover:bg-blue-600;
+  }
+
+  .btn-ajoutpanier {
+    @apply bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors relative overflow-hidden;
+    background: linear-gradient(
+      110deg,
+      #22c55e 45%,
+      #4ade80 50%,
+      #22c55e 55%
+    );
+    background-size: 200% 100%;
+    animation: shine 3.5s infinite linear;
+    
+
+  }
+
+  .btn-precedant {
+    @apply bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors;
+  }
+
+  .btn-danger {
+    @apply bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors;
+  }
+
+  .card {
+    @apply bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500;
+  }
+
+  /* Styles cartes produits */
+  .product-card {
+    @apply bg-white p-4 sm:p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow;
+  }
+
+  /* Styles img produits */
+  .product-img {
+    @apply w-full h-40 sm:h-48 object-cover rounded-lg;
+  }
+}
+
+/* chargement */
+.loading-spinner {
+  @apply animate-spin h-8 w-8 border-4 border-blue-500 rounded-full border-t-transparent;
+}
+
+/* header */
+.header {
+  @apply bg-white shadow-md sticky top-0 z-50;
+}
+
+/* footer */
+.footer {
+  @apply bg-gray-800 text-white py-6 sm:py-8;
+}
+
+/* Container principal */
+.main-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Grille produits responsive */
+.products-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8;
+}
+
+@media (max-width: 640px) {
+  .nav-link {
+    @apply py-3;
+  }
+
+  .product-card {
+    @apply p-3;
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.25);
+  }
+  30% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.25);
+  }
+  60% {
+    transform: scale(1);
+  }
+}
+
+.bxs-heart {
+  animation: heartbeat 6s infinite;
+  animation-delay: 1s;
+}
